@@ -1,0 +1,178 @@
+You are a senior frontend engineer and UI system designer.
+
+The portfolio already has light/dark mode and hero animations, but there are critical issues:
+
+---
+
+❌ ISSUE 1: DARK MODE NOT GLOBAL
+
+Currently, dark/light mode only applies to:
+
+* hero section
+* footer
+
+This is incorrect.
+
+---
+
+🎯 FIX REQUIRED:
+
+Make dark/light mode apply to the ENTIRE WEBSITE.
+
+---
+
+IMPLEMENTATION REQUIREMENTS:
+
+1. Use a global theme system:
+
+* Apply theme at root level (html or body)
+* Use class-based theming (dark / light)
+
+2. Ensure ALL components respond:
+
+* navbar
+* hero
+* projects
+* hackathons
+* experience
+* skills
+* contact
+
+3. Replace hardcoded colors with theme-aware styles:
+
+* Tailwind dark: classes OR
+* CSS variables (preferred for scalability)
+
+Example:
+
+* background
+* text
+* borders
+* cards
+* buttons
+
+Everything must switch consistently.
+
+---
+
+❌ ISSUE 2: DARK MODE ANIMATION TOO SUBTLE
+
+In dark mode:
+
+* animation is not noticeable
+* lacks visual impact
+
+---
+
+🎯 FIX REQUIRED:
+
+Make dark mode animation:
+
+* brighter
+* more visible
+* more engaging
+
+---
+
+🔥 ANIMATION IMPROVEMENTS (DARK MODE ONLY):
+
+1. Increase glow intensity:
+
+* stronger radial gradients
+* higher opacity
+* subtle bloom effect
+
+2. Increase contrast:
+
+* use brighter indigo / violet / neon tones
+
+3. Make motion more noticeable:
+
+* slightly faster response
+* larger movement range
+
+4. Cursor trail:
+
+* make trail brighter and longer
+* ensure it is clearly visible
+
+5. Particle system:
+
+* increase brightness
+* slightly increase size
+* add glow halo
+
+---
+
+⚠️ IMPORTANT:
+
+Do NOT:
+
+* break clean design
+* make it too flashy
+* reduce readability
+
+Maintain:
+👉 premium + controlled + intentional feel
+
+---
+
+🌗 LIGHT MODE RULE:
+
+Light mode is already good → DO NOT OVERCHANGE
+
+Only ensure:
+
+* consistency across all sections
+* no mismatched colors
+
+---
+
+🧠 ADDITIONAL FIXES:
+
+1. Ensure smooth transition between themes:
+
+* no flicker
+* animated color transition if possible
+
+2. Persist theme preference:
+
+* use localStorage
+
+3. Ensure accessibility:
+
+* proper contrast in both modes
+
+---
+
+⚙️ TECH REQUIREMENTS:
+
+* Tailwind dark mode OR CSS variables
+* Theme provider or global state
+* Clean reusable system
+
+---
+
+🧠 OUTPUT REQUIREMENTS:
+
+1. Explain how global theming is implemented
+2. Show updated layout with theme applied everywhere
+3. Provide code for:
+
+   * global theme provider / setup
+   * updated Tailwind or CSS variables
+   * dark mode animation improvements
+4. Ensure mobile compatibility
+
+---
+
+🚀 FINAL EXPECTATION:
+
+* Theme works across entire site
+* Dark mode feels rich and alive
+* Animation is clearly visible but still elegant
+* No section feels disconnected
+
+If any section looks inconsistent → fix it.
+
+---

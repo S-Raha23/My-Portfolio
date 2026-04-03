@@ -1,0 +1,234 @@
+You are a Staff Software Engineer, Product Designer, and Hiring Manager.
+
+You have already built a portfolio website. Now your task is to **FINALIZE it into a clean, high-end, non-vibe-coded portfolio** with strong visual clarity, interaction, and structure.
+
+---
+
+🎯 PRIMARY GOAL:
+
+Create a portfolio that:
+
+* feels engineered, not assembled
+* is clean, spacious, and intentional
+* highlights problem-solving ability
+* impresses both recruiters and engineers
+
+---
+
+⚠️ CRITICAL ISSUE: “TRAFFIC JAM” UI
+
+The current hero section feels visually crowded.
+
+---
+
+🎯 FIX REQUIRED:
+
+1. REDUCE VISUAL CLUTTER
+
+* Decrease particle density
+* Reduce overlapping glow areas
+* Limit simultaneous animations
+
+2. IMPROVE SPACING
+
+* Increase vertical spacing between elements
+
+3. ESTABLISH CLEAR HIERARCHY
+
+* Name dominates
+* Supporting text lighter
+* Buttons secondary
+
+---
+
+🧠 HERO SECTION (FINAL DESIGN)
+
+* Use full name: **Soubhagya Raha**
+* Large, bold, centered name
+* Clean tagline above
+* Simple readable description below
+
+Must feel:
+👉 calm, premium, balanced
+
+---
+
+🎨 NAVBAR IMPROVEMENTS
+
+* Increase size of logo text “Soubhagya Raha”
+* Improve readability and spacing
+* Keep navigation clean
+
+---
+
+🌗 GLOBAL DARK / LIGHT MODE
+
+* Apply theme to ENTIRE website
+* Use global theme system (html/body class or CSS variables)
+* Ensure ALL sections adapt consistently
+
+---
+
+🔥 GLOBAL ANIMATION SYSTEM (VERY IMPORTANT)
+
+Current issue:
+👉 Animation exists only in hero section
+
+---
+
+🎯 FIX REQUIRED:
+
+Create a **GLOBAL BACKGROUND ANIMATION SYSTEM** that spans the ENTIRE website.
+
+---
+
+IMPLEMENTATION REQUIREMENTS:
+
+1. BACKGROUND LAYER
+
+* Create a fixed or absolute background layer behind all sections
+* This layer persists across scrolling
+
+2. CONTINUOUS ANIMATION
+
+* Animation must flow smoothly across:
+
+  * hero
+  * projects
+  * hackathons
+  * experience
+  * skills
+  * contact
+
+* No sudden start/stop between sections
+
+3. CONSISTENT VISUAL LANGUAGE
+
+* Same particles, glow system, and color theme across entire site
+* Animation should feel like ONE SYSTEM, not separate pieces
+
+---
+
+✨ INTERACTION SYSTEM (GLOBAL)
+
+* Cursor interaction should work everywhere, not just hero
+* Particle and glow reactions should follow user across entire page
+* Subtle interaction should remain active throughout scrolling
+
+---
+
+🔥 DARK MODE ANIMATION UPGRADE
+
+Dark mode must feel:
+
+👉 immersive
+👉 cinematic
+👉 alive
+
+Improvements:
+
+* brighter glow
+* stronger contrast
+* fewer but more visible particles
+* smooth motion across entire page
+
+---
+
+⚠️ IMPORTANT BALANCE
+
+Animation should:
+
+* be visible everywhere ✅
+* feel smooth and continuous ✅
+* NOT distract from content ❌
+
+---
+
+✨ INTERACTION DETAILS
+
+* Cursor trail visible across whole site
+* Click ripple works globally
+* Hover interactions remain subtle but consistent
+
+---
+
+🧩 SECTIONS (ENSURE QUALITY)
+
+---
+
+HACKATHONS:
+
+* name, achievement, problem, solution, outcome
+
+EXPERIENCE:
+
+* role, company, timeline, work, impact
+
+PROJECTS:
+
+* problem, approach, result
+* add:
+  👉 View Project
+  👉 View Code
+
+SKILLS:
+
+* symmetrical layout
+* grouped categories
+* clicking skill highlights related projects
+
+CONTACT:
+
+* clean form (name, email, message)
+
+---
+
+📐 DESIGN CONSISTENCY
+
+Ensure:
+
+* spacing
+* alignment
+* typography
+* symmetry
+
+Everything should feel:
+👉 structured and engineered
+
+---
+
+⚙️ TECH REQUIREMENTS
+
+* Next.js
+* Tailwind CSS
+* Framer Motion
+* Performance optimized
+
+---
+
+🧠 OUTPUT REQUIREMENTS
+
+1. Explain improvements
+2. Show global animation architecture
+3. Provide code for:
+
+   * global animation layer
+   * cursor interaction system
+   * theme system
+4. Provide updated components
+
+---
+
+🚀 FINAL EXPECTATION
+
+The portfolio should:
+
+* feel like one continuous system
+* not feel section-based
+* feel interactive across entire page
+* clearly communicate:
+  👉 “This is a serious problem solver”
+
+If animation feels disconnected → FIX IT.
+
+---

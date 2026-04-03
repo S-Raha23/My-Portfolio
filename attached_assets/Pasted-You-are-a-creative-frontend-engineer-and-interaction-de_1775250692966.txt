@@ -1,0 +1,171 @@
+You are a creative frontend engineer and interaction designer.
+
+The current hero animation (cursor-following orbs + floating particles) feels too subtle and forgettable.
+
+Your task is to transform it into a **highly interactive, playful, and memorable experience** — something users will WANT to explore.
+
+---
+
+🎯 GOAL:
+
+Make the hero feel:
+
+* interactive
+* responsive
+* fun to play with
+* visually impressive but not chaotic
+
+Users should feel:
+👉 “this is different”
+👉 “this reacts to me”
+
+---
+
+⚠️ IMPORTANT RULES:
+
+* Keep it smooth and performant
+* Avoid clutter or overwhelming visuals
+* Maintain a premium, clean aesthetic
+* Interaction should feel intentional, not gimmicky
+
+---
+
+🔥 INTERACTION UPGRADES REQUIRED:
+
+1. CURSOR INTERACTION (MAJOR UPGRADE)
+
+Replace simple cursor-follow with:
+
+* Orbs that:
+
+  * stretch or distort slightly when moving fast
+  * merge/blend when close together
+  * repel or attract based on cursor speed
+
+* Add subtle magnetic pull near:
+
+  * buttons
+  * text
+  * important UI elements
+
+---
+
+2. CLICK INTERACTION (NEW)
+
+When user clicks anywhere in hero:
+
+* create ripple / energy wave effect
+* particles burst outward briefly
+* glow intensifies momentarily
+
+This should feel:
+👉 satisfying and responsive
+
+---
+
+3. HOVER INTERACTION (IMPORTANT)
+
+When hovering over:
+
+* name (Soubhagya)
+* buttons
+
+Add:
+
+* glow intensification
+* slight scale + light effect
+* nearby particles react (move or brighten)
+
+---
+
+4. PARTICLE SYSTEM IMPROVEMENT
+
+Upgrade particles:
+
+* Instead of random drifting:
+
+  * particles react to cursor proximity
+  * nearby particles move away or orbit cursor
+  * density slightly increases near cursor
+
+* Add:
+
+  * subtle trail effect when cursor moves fast
+
+---
+
+5. DEPTH + PARALLAX
+
+Add layered depth:
+
+* background layer (slow movement)
+* mid layer (particles)
+* foreground orbs (fast response)
+
+Movement should vary by depth → creates immersion
+
+---
+
+6. IDLE BEHAVIOR
+
+When user is inactive:
+
+* animation becomes calmer
+* ambient glow breathes slowly
+* particles drift gently
+
+When user returns:
+👉 system becomes active again
+
+---
+
+7. MICRO-DETAILS (VERY IMPORTANT)
+
+Add small delightful touches:
+
+* slight glow pulse on CTA buttons
+* cursor slightly changes near interactive elements
+* smooth easing everywhere (no jerky motion)
+
+---
+
+⚙️ TECH IMPLEMENTATION:
+
+Use:
+
+* Framer Motion for smooth physics
+* requestAnimationFrame for particle system if needed
+* Tailwind for styling
+
+Ensure:
+
+* performance optimized
+* no lag on mid-range devices
+
+---
+
+🧠 OUTPUT REQUIREMENTS:
+
+1. Explain interaction design decisions
+2. Provide updated animation logic
+3. Provide React/Next.js component code
+4. Show how cursor, click, and hover events are handled
+5. Ensure code is modular and clean
+
+---
+
+🚀 FINAL EXPECTATION:
+
+The hero should feel like:
+
+* a living system
+* interactive playground
+* premium product experience
+
+NOT just:
+
+* background animation
+
+If it still feels passive → improve it.
+
+---

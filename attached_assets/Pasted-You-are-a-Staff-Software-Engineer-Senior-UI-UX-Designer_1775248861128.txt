@@ -1,0 +1,183 @@
+You are a Staff Software Engineer, Senior UI/UX Designer, and Hiring Manager combined.
+
+Your task is to DESIGN and BUILD a world-class developer portfolio website that DOES NOT look like a typical “template” or “vibe-coded” portfolio.
+
+---
+
+🎯 GOAL:
+Create a highly distinctive, modern portfolio for:
+
+* AI/ML enthusiast
+* Strong DSA background (C++)
+* Aspiring Software Engineer
+
+This portfolio must impress:
+
+* FAANG-level recruiters
+* senior engineers
+* hackathon judges
+
+---
+
+⚠️ STRICT REQUIREMENTS (CRITICAL):
+
+Avoid ALL common portfolio mistakes:
+
+* NO generic hero text (“passionate developer” etc.)
+* NO skill percentage bars
+* NO basic project card grid
+* NO copy-paste section layout
+* NO meaningless animations
+* NO shallow content
+
+Everything must show:
+
+* depth
+* engineering thinking
+* decision-making
+* real-world capability
+
+---
+
+🧩 REQUIRED STRUCTURE (BUT NOT BORING):
+
+Design this as a STORY-DRIVEN EXPERIENCE, not sections.
+
+Flow should feel like:
+
+1. Hook (who I am in 3 seconds)
+2. What I build (AI/ML + systems)
+3. Proof (projects with depth)
+4. Journey (timeline: hackathons + experience)
+5. Engineering mindset
+6. Contact / call to action
+
+---
+
+🔥 DESIGN REQUIREMENTS:
+
+* Modern, minimal, but distinctive (NOT template)
+* Smooth scroll-based storytelling
+* Clean typography (no clutter)
+* Subtle but meaningful animations
+* Strong visual hierarchy
+* Dark or neutral theme preferred
+
+Optional (only if meaningful):
+
+* glassmorphism OR minimal gradients
+* micro-interactions
+* scroll-triggered reveals
+
+---
+
+⚙️ TECH STACK (FREE ONLY):
+
+Use:
+
+* Next.js (App Router)
+* Tailwind CSS
+* Framer Motion (for animations)
+* Deployable on Vercel (free tier)
+
+Code must be:
+
+* production-ready
+* clean and modular
+* well-structured
+
+---
+
+🧠 CONTENT REQUIREMENTS (VERY IMPORTANT):
+
+Instead of shallow content, generate:
+
+✅ HERO:
+
+* clear positioning (AI/ML + SDE)
+* strong, unique statement (NOT generic)
+
+✅ PROJECTS (MOST IMPORTANT):
+Each project must include:
+
+* problem statement
+* approach
+* tech decisions
+* impact/result
+* optional architecture explanation
+
+Make project display INTERACTIVE (not just cards)
+
+✅ HACKATHONS:
+
+* highlight participation + achievements
+* include story (problem → solution → result)
+
+✅ TIMELINE:
+
+* visually appealing vertical timeline
+* internships + hackathons + milestones
+
+✅ SKILLS:
+
+* shown through usage, NOT percentages
+* grouped meaningfully (e.g., “ML Systems”, “Backend”)
+
+---
+
+🎨 UX DETAILS:
+
+* Navigation should feel seamless
+* Add scroll-based transitions
+* Add hover states that provide meaning
+* Ensure mobile responsiveness
+
+---
+
+⚡ PERFORMANCE + QUALITY:
+
+* fast loading
+* optimized images
+* accessible (contrast, semantic HTML)
+* SEO-friendly
+
+---
+
+🔌 CLAUDE TASKS (STEP BY STEP):
+
+1. First, DESIGN the full layout (describe sections + flow)
+2. Then, break into components
+3. Then, generate code for each component
+4. Then, assemble full project structure
+5. Then, give deployment steps (Vercel)
+
+---
+
+💡 OUTPUT FORMAT:
+
+* Step 1: UX + structure design
+* Step 2: Component breakdown
+* Step 3: Code (modular)
+* Step 4: Folder structure
+* Step 5: Final polish suggestions
+
+---
+
+🚀 FINAL GOAL:
+
+This portfolio should:
+
+* feel like a product, not a page
+* clearly differentiate from 95% portfolios
+* demonstrate real engineering capability
+* be memorable within 10 seconds
+
+---
+
+If something feels generic → REWRITE it.
+
+If something feels like a template → REMOVE it.
+
+Think like a hiring manager reviewing 1000 portfolios.
+
+---

@@ -1,0 +1,217 @@
+You are a Staff Software Engineer, Product Designer, and Hiring Manager.
+
+You have already built a portfolio. Now your task is to **FINALIZE it into a top 1% portfolio** that feels intentional, real, and NOT vibe-coded.
+
+---
+
+🎯 PRIMARY GOAL:
+
+Make this portfolio feel like:
+
+* built by a serious engineer
+* focused on problem solving
+* clean, structured, and memorable
+
+NOT:
+
+* template-like
+* overly flashy
+* generic AI-generated
+
+---
+
+⚠️ REMOVE "VIBE-CODED FEEL" (CRITICAL)
+
+Audit the entire website and fix:
+
+* anything that feels generic
+* anything overly decorative without purpose
+* anything that looks like a template
+
+Every section must answer:
+👉 “What signal does this give to a recruiter?”
+
+If no clear signal → improve or remove it
+
+---
+
+🧠 POSITIONING CHANGE (VERY IMPORTANT)
+
+Present the user as:
+
+👉 “A problem solver who builds intelligent systems”
+
+NOT just:
+
+* developer
+* AI enthusiast
+
+Update:
+
+* hero text
+* project descriptions
+* experience descriptions
+
+---
+
+🔥 ADD NEW SECTION — HACKATHONS
+
+Create a dedicated Hackathon section with:
+
+For each hackathon:
+
+* Name of hackathon
+* Position / achievement (if any)
+* Problem statement
+* Solution built
+* Tech used (simple terms)
+* Outcome / impact
+
+Design:
+
+* clean card or timeline style
+* well spaced
+* visually consistent with Experience section
+
+---
+
+🧩 PROJECT SECTION IMPROVEMENTS
+
+For each project:
+
+Add:
+
+* Live demo link
+* GitHub link
+
+Display them clearly as buttons:
+👉 “View Project” | “View Code”
+
+Also:
+
+* Make projects feel like case studies (not cards)
+* Add structured explanation:
+
+  * Problem
+  * Approach
+  * Result
+
+---
+
+🧠 SKILLS SECTION (MAJOR UPGRADE)
+
+Improve design:
+
+* Make layout highly symmetrical
+* Group skills into clear categories
+* Visually highlight key strengths
+
+NEW FEATURE (IMPORTANT):
+
+Make skills INTERACTIVE:
+
+If user clicks a skill (example: Hugging Face):
+👉 it should navigate to or highlight projects that use that skill
+
+Implementation ideas:
+
+* scroll to relevant projects
+* filter projects dynamically
+* or highlight matching projects
+
+This must feel smooth and intentional
+
+---
+
+✨ ADD FUN BUT CONTROLLED ANIMATIONS
+
+Add animations ONLY where they improve experience:
+
+Examples:
+
+* subtle background animation in hero (gradient shift or particles)
+* smooth scroll reveal for sections
+* hover animations on projects
+* timeline animation while scrolling
+
+Avoid:
+
+* excessive motion
+* distracting effects
+
+Animation must feel:
+👉 premium, calm, purposeful
+
+---
+
+🎯 HERO SECTION (FINAL TOUCH)
+
+* Keep it minimal and symmetric
+* Include name: **Soubhagya**
+* Add subtle animation (background or text)
+* Clear one-line positioning:
+  → problem solver + AI/ML + systems
+
+No clutter
+No gimmicks
+
+---
+
+📐 DESIGN CONSISTENCY
+
+Ensure across entire site:
+
+* perfect spacing
+* alignment
+* consistent typography
+* uniform component sizing
+
+Everything should feel:
+👉 engineered, not assembled
+
+---
+
+📩 CONTACT SECTION
+
+* Keep clean form:
+  Name
+  Email
+  Message
+
+* Ensure spacing is comfortable
+
+* Make it easy to use
+
+---
+
+⚙️ TECH REQUIREMENTS (REPLIT FRIENDLY)
+
+* Next.js
+* Tailwind CSS
+* Framer Motion (for controlled animations)
+* Clean component structure
+
+---
+
+🧠 OUTPUT FORMAT:
+
+1. List all improvements made
+2. Updated layout structure
+3. Updated components (code)
+4. Logic for skill → project interaction
+5. Animation details (where and why)
+
+---
+
+🚀 FINAL EXPECTATION:
+
+This portfolio should:
+
+* feel like a product
+* communicate problem-solving ability
+* impress both recruiters and engineers
+* NOT feel AI-generated
+
+If anything still feels generic → FIX IT.
+
+---

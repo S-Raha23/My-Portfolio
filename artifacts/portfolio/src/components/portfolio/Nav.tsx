@@ -5,6 +5,7 @@ const NAV_LINKS = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Work", href: "#projects" },
+  { label: "Hackathons", href: "#hackathons" },
   { label: "Journey", href: "#timeline" },
   { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
@@ -32,12 +33,12 @@ export function Nav() {
       }`}
     >
       <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        <a href="#home" className="text-white font-semibold text-lg tracking-tight">
+        <a href="#home" className="text-white font-semibold text-base tracking-tight">
           Soubhagya
         </a>
 
-        {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
+        {/* Desktop */}
+        <div className="hidden md:flex items-center gap-7">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}
@@ -51,21 +52,19 @@ export function Nav() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-muted-foreground hover:text-white transition-colors"
+          className="md:hidden flex flex-col gap-1.5 p-1 text-muted-foreground hover:text-white transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Toggle navigation menu"
         >
-          <div className="space-y-1.5">
-            <span className={`block h-0.5 w-6 bg-current transition-all ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-current transition-all ${menuOpen ? "opacity-0" : ""}`} />
-            <span className={`block h-0.5 w-6 bg-current transition-all ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
-          </div>
+          <span className={`block h-0.5 w-5 bg-current transition-all origin-center ${menuOpen ? "rotate-45 translate-y-2" : ""}`} />
+          <span className={`block h-0.5 w-5 bg-current transition-all ${menuOpen ? "opacity-0" : ""}`} />
+          <span className={`block h-0.5 w-5 bg-current transition-all origin-center ${menuOpen ? "-rotate-45 -translate-y-2" : ""}`} />
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden bg-[#0a0a0f]/95 backdrop-blur-md border-t border-white/8 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden bg-[#0a0a0f]/96 backdrop-blur-md border-t border-white/8 px-6 py-4 flex flex-col gap-3">
           {NAV_LINKS.map((link) => (
             <a
               key={link.label}

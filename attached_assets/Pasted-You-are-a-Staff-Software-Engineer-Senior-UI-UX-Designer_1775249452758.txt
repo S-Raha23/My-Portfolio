@@ -1,0 +1,195 @@
+You are a Staff Software Engineer, Senior UI/UX Designer, and Hiring Manager combined.
+
+You have already generated a portfolio website. Now your task is to **REFINE and IMPROVE it** based on the following strict feedback.
+
+---
+
+🎯 GOAL:
+Transform the current portfolio into a **clean, professional, recruiter-friendly, non-vibe-coded portfolio** that is easy to understand even for NON-TECH recruiters while still impressing senior engineers.
+
+---
+
+⚠️ CRITICAL IMPROVEMENTS REQUIRED:
+
+1. REMOVE COMPLEX TECH JARGON
+
+* Replace heavy technical terms with clear, simple language
+* Make descriptions understandable to non-technical recruiters
+* Still keep depth, but explain things in plain English
+
+---
+
+2. HERO SECTION REDESIGN (VERY IMPORTANT)
+
+Current hero is not acceptable.
+
+Requirements:
+
+* Clean, symmetric layout
+* No random images (REMOVE class/object-type picture)
+* No clutter
+* Clearly display name: **Soubhagya**
+* Strong but simple positioning statement
+
+Hero should feel:
+
+* calm
+* confident
+* minimal
+* premium (NOT flashy)
+
+Avoid:
+
+* typing animations
+* overused gradients
+* unnecessary motion
+
+---
+
+3. NAVIGATION BAR FIX
+
+* Remove numbering (no 1,2,3…)
+* Keep it clean and minimal
+* Proper spacing between items
+* Example structure:
+  Home | Work | Journey | Skills | Contact
+
+---
+
+4. MAKE DESIGN MORE SYMMETRICAL
+
+Across entire website:
+
+* consistent padding and margins
+* aligned sections
+* uniform card sizes
+* balanced whitespace
+
+Everything should feel:
+
+* structured
+* intentional
+* visually stable
+
+---
+
+5. EXPERIENCE SECTION (MAJOR FIX)
+
+Current version is weak → REBUILD it
+
+Each experience MUST include:
+
+* Title (role)
+* Organization
+* Timeline (clear dates)
+* What I did (responsibilities)
+* Impact (result / outcome)
+
+Layout:
+
+* well spaced
+* readable
+* structured (NOT cramped)
+
+Make it feel like:
+→ a professional resume but visually better
+
+---
+
+6. TECHNICAL ABILITIES SECTION
+
+Fix issues:
+
+* Currently unclear and messy
+
+New requirements:
+
+* Highly symmetrical layout (grid or columns)
+
+* Clearly grouped categories:
+
+  * Programming
+  * AI/ML
+  * Backend
+  * Tools
+
+* No percentage bars
+
+* No clutter
+
+Each skill should be:
+
+* easily scannable
+* visually consistent
+
+---
+
+7. CONTACT SECTION IMPROVEMENT
+
+Add:
+
+* Proper spacing
+* A clean contact form with:
+
+  * Name
+  * Email
+  * Message (IMPORTANT — user can write content directly)
+
+Make it:
+
+* simple
+* usable
+* professional
+
+---
+
+8. OVERALL STYLE CHANGE
+
+Shift design towards:
+
+* minimal + clean (Apple-like clarity)
+* NOT futuristic overload
+* NOT animation-heavy
+
+Use:
+
+* subtle interactions only where meaningful
+* strong typography
+* whitespace for clarity
+
+---
+
+⚙️ TECH CONSTRAINTS (KEEP SAME):
+
+* Next.js
+* Tailwind CSS
+* Framer Motion (minimal usage only)
+* Fully deployable on Vercel (free)
+
+---
+
+🧠 OUTPUT REQUIREMENTS:
+
+1. Explain what changes you are making and WHY
+2. Show updated layout structure
+3. Provide improved component code
+4. Ensure responsiveness
+5. Ensure readability for both:
+
+   * recruiters
+   * engineers
+
+---
+
+🚀 FINAL EXPECTATION:
+
+After refinement, this portfolio should:
+
+* feel clean, structured, and intentional
+* be understandable within 10 seconds
+* clearly communicate capability without confusion
+* stand out WITHOUT relying on flashy UI
+
+If anything still feels like a template → FIX it.
+
+---

@@ -8,7 +8,7 @@ import { Contact } from "@/components/portfolio/Contact";
 
 export default function Portfolio() {
   return (
-    <div className="bg-[#0a0a0f] min-h-screen text-foreground selection:bg-primary/30 selection:text-white">
+    <div className="bg-[#0a0a0f] min-h-screen text-foreground">
       <Nav />
       <main>
         <Hero />
@@ -18,9 +18,9 @@ export default function Portfolio() {
         <Skills />
         <Contact />
       </main>
-      <footer className="py-6 text-center border-t border-white/5 bg-[#050508]">
-        <p className="font-mono text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} // System offline.
+      <footer className="py-8 text-center border-t border-white/5 bg-[#050508]">
+        <p className="text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} Soubhagya. Built with care.
         </p>
       </footer>
     </div>

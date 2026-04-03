@@ -1,45 +1,161 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Github, Linkedin, ArrowRight } from "lucide-react";
+import { Github, Linkedin, Mail, Send } from "lucide-react";
 
 export function Contact() {
-  return (
-    <section id="contact" className="py-32 bg-[#050508] relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // In a real deployment, connect this to a form backend (e.g. Formspree, Resend)
+    setSubmitted(true);
+  };
+
+  return (
+    <section id="contact" className="py-28 bg-[#050508]">
+      <div className="max-w-4xl mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-2xl mx-auto"
+          transition={{ duration: 0.5 }}
+          className="mb-16 text-center"
         >
-          <div className="font-mono text-primary mb-4 text-sm tracking-wider">04. WHAT'S NEXT</div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-white">Let's Build Something <br/> Exceptional.</h2>
-          <p className="text-lg text-muted-foreground mb-12 leading-relaxed">
-            I'm currently open for new opportunities in ML Engineering and Backend Systems. 
-            Whether you have a question, a project idea, or just want to discuss deep learning architectures, my inbox is open.
+          <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">Contact</p>
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Let's Talk</h2>
+          <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
+            Whether you have a project in mind, a question, or just want to connect — I'd love to hear from you.
           </p>
-
-          <a 
-            href="mailto:hello@example.com" 
-            className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-white rounded-lg font-medium hover:bg-primary/90 transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(99,102,241,0.4)] mb-16"
-          >
-            <Mail className="w-5 h-5" />
-            Initialize Connection
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </a>
-
-          <div className="flex justify-center gap-8 border-t border-white/10 pt-12">
-            <a href="#" className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
-              <Github className="w-6 h-6" />
-            </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full">
-              <Linkedin className="w-6 h-6" />
-            </a>
-          </div>
         </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+          {/* Contact info */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="space-y-6"
+          >
+            <div>
+              <h3 className="text-white font-semibold text-lg mb-2">Reach me directly</h3>
+              <p className="text-muted-foreground text-sm leading-relaxed">
+                I'm currently open to internship and full-time opportunities in ML Engineering and Software Engineering. Response time is typically within 48 hours.
+              </p>
+            </div>
+
+            <a
+              href="mailto:soubhagya@example.com"
+              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-white transition-colors group"
+            >
+              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center group-hover:border-primary/40 transition-colors">
+                <Mail className="w-4 h-4" />
+              </div>
+              soubhagya@example.com
+            </a>
+
+            <div className="flex gap-3">
+              <a
+                href="#"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/8 bg-white/[0.02] text-sm text-muted-foreground hover:text-white hover:border-white/20 transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+              <a
+                href="#"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/8 bg-white/[0.02] text-sm text-muted-foreground hover:text-white hover:border-white/20 transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Contact form */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            {submitted ? (
+              <div className="p-8 rounded-2xl border border-primary/30 bg-primary/5 text-center">
+                <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center mx-auto mb-4">
+                  <Send className="w-5 h-5 text-primary" />
+                </div>
+                <h3 className="text-white font-semibold mb-2">Message sent</h3>
+                <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+              </div>
+            ) : (
+              <form
+                onSubmit={handleSubmit}
+                className="p-7 rounded-2xl border border-white/8 bg-white/[0.02] space-y-5"
+              >
+                <div>
+                  <label htmlFor="name" className="block text-xs font-medium text-muted-foreground mb-1.5">
+                    Name
+                  </label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="w-full px-4 py-2.5 rounded-lg bg-white/4 border border-white/8 text-white text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-xs font-medium text-muted-foreground mb-1.5">
+                    Email
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-2.5 rounded-lg bg-white/4 border border-white/8 text-white text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-xs font-medium text-muted-foreground mb-1.5">
+                    Message
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    required
+                    rows={5}
+                    value={form.message}
+                    onChange={handleChange}
+                    placeholder="Tell me what's on your mind..."
+                    className="w-full px-4 py-2.5 rounded-lg bg-white/4 border border-white/8 text-white text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors resize-none"
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary/90 transition-colors"
+                >
+                  <Send className="w-4 h-4" />
+                  Send Message
+                </button>
+              </form>
+            )}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

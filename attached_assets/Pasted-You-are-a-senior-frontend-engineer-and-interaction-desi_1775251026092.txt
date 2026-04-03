@@ -1,0 +1,153 @@
+You are a senior frontend engineer and interaction designer.
+
+The current hero animation is interactive but too subtle — users do not notice it unless they intentionally look for it.
+
+Your task is to **make the animation immediately visible, engaging, and inviting interaction**, while keeping a premium and clean design.
+
+---
+
+🎯 GOAL:
+
+Make users instantly feel:
+👉 “something is happening here”
+👉 “I want to move my mouse”
+
+The interaction should:
+
+* attract attention naturally
+* feel playful and responsive
+* not require instructions
+
+---
+
+🔥 MAKE ANIMATION VISIBLE (CRITICAL)
+
+1. Increase visual presence:
+
+* Make glow orbs slightly brighter and larger
+* Increase contrast against background
+* Add soft bloom effect
+
+2. Add subtle motion even without interaction:
+
+* Orbs should slowly drift by default
+* Light movement should be visible immediately on page load
+
+---
+
+👁️ ADD DISCOVERY CUE (VERY IMPORTANT)
+
+Add a small but elegant hint:
+
+* Text near hero bottom or cursor area:
+  → “Move your cursor”
+  OR
+  → “Try interacting”
+
+* This text should:
+
+  * fade in/out softly
+  * disappear after first interaction
+
+---
+
+✨ ENHANCE INTERACTIVITY
+
+Upgrade behavior:
+
+1. Cursor creates visible trail:
+
+* glowing path that fades smoothly
+
+2. Orbs react strongly:
+
+* faster response to movement
+* slight bounce or elastic motion
+
+3. On click:
+
+* create a bright ripple or energy wave
+* brief burst of particles
+
+4. Particle interaction:
+
+* particles move away or swirl around cursor
+* brightness increases near cursor
+
+---
+
+🎮 MAKE IT FUN (BUT CONTROLLED)
+
+* Add slight “playful physics”
+* Cursor movement should feel like it’s influencing a system
+* Avoid randomness — keep behavior consistent
+
+---
+
+🌗 ADD LIGHT / DARK MODE TOGGLE
+
+Add a clean toggle button in navbar:
+
+Requirements:
+
+* simple icon (sun / moon)
+* smooth transition between modes
+
+Dark mode:
+
+* deep background
+* glowing accents
+
+Light mode:
+
+* soft background
+* subtle shadows instead of glow
+
+Ensure:
+
+* all components adapt correctly
+* animation colors adjust for visibility in both modes
+
+---
+
+🎨 DESIGN RULES
+
+* Maintain symmetry and clean layout
+* Do NOT overcrowd UI
+* Animation should enhance, not distract
+
+---
+
+⚙️ TECH IMPLEMENTATION
+
+* Use Framer Motion for transitions
+* Use CSS variables or Tailwind theme for light/dark mode
+* Ensure performance is smooth
+
+---
+
+🧠 OUTPUT REQUIREMENTS
+
+1. Explain changes made
+2. Provide updated hero animation logic
+3. Provide code for:
+
+   * cursor interaction
+   * click ripple
+   * particle behavior
+   * light/dark toggle
+4. Ensure mobile fallback (no heavy animation)
+
+---
+
+🚀 FINAL EXPECTATION
+
+The hero should:
+
+* immediately feel alive
+* invite interaction without instructions
+* be memorable within 5 seconds
+
+If user does not notice animation instantly → improve it.
+
+---

@@ -17,7 +17,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-28 bg-[#050508]">
+    <section id="contact" className="py-28 bg-background">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ export function Contact() {
           className="mb-16 text-center"
         >
           <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">Contact</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Let's Talk</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Let's Talk</h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Whether you have a project in mind, a question, or just want to connect — I'd love to hear from you.
           </p>
@@ -43,7 +43,7 @@ export function Contact() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-white font-semibold text-lg mb-2">Reach me directly</h3>
+              <h3 className="text-foreground font-semibold text-lg mb-2">Reach me directly</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 I'm currently open to internship and full-time opportunities in ML Engineering and Software Engineering. Response time is typically within 48 hours.
               </p>
@@ -51,9 +51,9 @@ export function Contact() {
 
             <a
               href="mailto:soubhagya@example.com"
-              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-white transition-colors group"
+              className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
             >
-              <div className="w-10 h-10 rounded-xl bg-white/5 border border-white/8 flex items-center justify-center group-hover:border-primary/40 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center group-hover:border-primary/40 transition-colors">
                 <Mail className="w-4 h-4" />
               </div>
               soubhagya@example.com
@@ -62,14 +62,14 @@ export function Contact() {
             <div className="flex gap-3">
               <a
                 href="#"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/8 bg-white/[0.02] text-sm text-muted-foreground hover:text-white hover:border-white/20 transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
               >
                 <Github className="w-4 h-4" />
                 GitHub
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/8 bg-white/[0.02] text-sm text-muted-foreground hover:text-white hover:border-white/20 transition-colors"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
               >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
@@ -89,13 +89,13 @@ export function Contact() {
                 <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center mx-auto mb-4">
                   <Send className="w-5 h-5 text-primary" />
                 </div>
-                <h3 className="text-white font-semibold mb-2">Message sent</h3>
+                <h3 className="text-foreground font-semibold mb-2">Message sent</h3>
                 <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll get back to you soon.</p>
               </div>
             ) : (
               <form
                 onSubmit={handleSubmit}
-                className="p-7 rounded-2xl border border-white/8 bg-white/[0.02] space-y-5"
+                className="p-7 rounded-2xl border border-border bg-card space-y-5"
               >
                 <div>
                   <label htmlFor="name" className="block text-xs font-medium text-muted-foreground mb-1.5">
@@ -109,7 +109,7 @@ export function Contact() {
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Your name"
-                    className="w-full px-4 py-2.5 rounded-lg bg-white/4 border border-white/8 text-white text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                    className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
                   />
                 </div>
 
@@ -125,7 +125,7 @@ export function Contact() {
                     value={form.email}
                     onChange={handleChange}
                     placeholder="your@email.com"
-                    className="w-full px-4 py-2.5 rounded-lg bg-white/4 border border-white/8 text-white text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                    className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
                   />
                 </div>
 
@@ -141,13 +141,13 @@ export function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     placeholder="Tell me what's on your mind..."
-                    className="w-full px-4 py-2.5 rounded-lg bg-white/4 border border-white/8 text-white text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors resize-none"
+                    className="w-full px-4 py-2.5 rounded-lg bg-background border border-border text-foreground text-sm placeholder:text-muted-foreground/50 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors resize-none"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-white font-medium text-sm hover:bg-primary/90 transition-colors"
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
                 >
                   <Send className="w-4 h-4" />
                   Send Message

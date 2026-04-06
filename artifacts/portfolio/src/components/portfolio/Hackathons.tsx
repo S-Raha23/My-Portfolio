@@ -54,7 +54,7 @@ const HACKATHONS = [
 
 export function Hackathons() {
   return (
-    <section id="hackathons" className="py-28 bg-[#0a0a0f]">
+    <section id="hackathons" className="py-28 bg-background">
       <div className="max-w-5xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ export function Hackathons() {
           className="mb-16 text-center"
         >
           <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">Hackathons</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Built Under Pressure</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Built Under Pressure</h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Competitions where time is constrained but ambition isn't. Each one forced fast decisions on real problems.
           </p>
@@ -80,7 +80,7 @@ export function Hackathons() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="p-7 rounded-2xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.035] transition-colors"
+                className="p-7 rounded-2xl border border-border bg-card hover:bg-card/80 transition-colors"
               >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -94,7 +94,7 @@ export function Hackathons() {
                         <span className="text-xs text-muted-foreground">·</span>
                         <span className="text-xs text-muted-foreground">{h.date}</span>
                       </div>
-                      <h3 className="text-lg font-semibold text-white">{h.name}</h3>
+                      <h3 className="text-lg font-semibold text-foreground">{h.name}</h3>
                       <p className="text-sm text-muted-foreground">{h.organizer}</p>
                     </div>
                   </div>
@@ -102,29 +102,29 @@ export function Hackathons() {
 
                 {/* Case study grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-6">
-                  <div className="p-4 rounded-xl bg-white/[0.02] border border-white/6">
+                  <div className="p-4 rounded-xl bg-muted/40 border border-border">
                     <h4 className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">The Problem</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{h.problem}</p>
                   </div>
-                  <div className="p-4 rounded-xl bg-white/[0.02] border border-white/6">
+                  <div className="p-4 rounded-xl bg-muted/40 border border-border">
                     <h4 className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">What We Built</h4>
                     <p className="text-muted-foreground text-sm leading-relaxed">{h.solution}</p>
                   </div>
                 </div>
 
                 {/* Footer */}
-                <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-white/6">
+                <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-border">
                   <div className="flex flex-wrap gap-2">
                     {h.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-md bg-white/4 border border-white/8 text-xs text-gray-400 font-mono"
+                        className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-muted-foreground font-mono"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
-                  <p className="text-sm text-white/80 font-medium max-w-sm text-right">
+                  <p className="text-sm text-foreground font-medium max-w-sm text-right">
                     {h.outcome}
                   </p>
                 </div>

@@ -89,7 +89,7 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
   const active = filtered.find((p) => p.id === activeId) ?? filtered[0];
 
   return (
-    <section id="projects" className="py-28 bg-[#0a0a0f]">
+    <section id="projects" className="py-28 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -99,7 +99,7 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
           className="mb-16 text-center"
         >
           <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">Work</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Problems I've Solved</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">Problems I've Solved</h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Each project starts with a real constraint. Here's how I thought through it.
           </p>
@@ -133,7 +133,7 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
 
         {filtered.length === 0 ? (
           <p className="text-muted-foreground text-center py-12">
-            No projects directly use <span className="text-white font-medium">{activeSkill}</span>. Try another skill or{" "}
+            No projects directly use <span className="text-foreground font-medium">{activeSkill}</span>. Try another skill or{" "}
             <button onClick={onClearSkill} className="text-primary underline underline-offset-2">clear the filter</button>.
           </p>
         ) : (
@@ -146,8 +146,8 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
                   onClick={() => setActiveId(proj.id)}
                   className={`w-full text-left px-5 py-4 rounded-xl border transition-all flex items-start justify-between group ${
                     activeId === proj.id
-                      ? "bg-primary/10 border-primary/40 text-white"
-                      : "border-white/8 text-muted-foreground hover:bg-white/[0.04] hover:text-white"
+                      ? "bg-primary/10 border-primary/40 text-foreground"
+                      : "border-border text-muted-foreground hover:bg-muted/50 hover:text-foreground"
                   }`}
                 >
                   <div className="flex-1 min-w-0">
@@ -174,38 +174,38 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.25 }}
-                    className="p-8 rounded-2xl border border-white/8 bg-white/[0.02]"
+                    className="p-8 rounded-2xl border border-border bg-card"
                   >
                     {/* Header */}
                     <div className="mb-6">
                       <span className="text-xs text-primary font-semibold tracking-widest uppercase">{active.category}</span>
-                      <h3 className="text-2xl font-bold text-white mt-1 mb-1">{active.title}</h3>
+                      <h3 className="text-2xl font-bold text-foreground mt-1 mb-1">{active.title}</h3>
                       <p className="text-sm text-muted-foreground">{active.tagline}</p>
                     </div>
 
                     {/* Case study */}
                     <div className="space-y-5 mb-8">
-                      <div className="p-4 rounded-xl bg-white/[0.02] border border-white/6">
+                      <div className="p-4 rounded-xl bg-muted/40 border border-border">
                         <h4 className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">The Problem</h4>
                         <p className="text-muted-foreground text-sm leading-relaxed">{active.problem}</p>
                       </div>
-                      <div className="p-4 rounded-xl bg-white/[0.02] border border-white/6">
+                      <div className="p-4 rounded-xl bg-muted/40 border border-border">
                         <h4 className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">My Approach</h4>
                         <p className="text-muted-foreground text-sm leading-relaxed">{active.approach}</p>
                       </div>
-                      <div className="p-4 rounded-xl bg-primary/[0.04] border border-primary/15">
+                      <div className="p-4 rounded-xl bg-primary/[0.06] border border-primary/20">
                         <h4 className="text-[10px] font-bold text-primary uppercase tracking-widest mb-2">Result</h4>
-                        <p className="text-white text-sm leading-relaxed font-medium">{active.impact}</p>
+                        <p className="text-foreground text-sm leading-relaxed font-medium">{active.impact}</p>
                       </div>
                     </div>
 
                     {/* Footer: stack + links */}
-                    <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-white/8">
+                    <div className="flex flex-wrap items-center justify-between gap-4 pt-5 border-t border-border">
                       <div className="flex flex-wrap gap-2">
                         {active.stack.map((tech) => (
                           <span
                             key={tech}
-                            className="px-2.5 py-1 rounded-md bg-white/4 border border-white/8 text-xs text-gray-400 font-mono"
+                            className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-muted-foreground font-mono"
                           >
                             {tech}
                           </span>
@@ -216,7 +216,7 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
                           href={active.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-white/10 bg-white/[0.03] text-xs text-muted-foreground hover:text-white hover:border-white/20 transition-colors font-medium"
+                          className="flex items-center gap-1.5 px-4 py-2 rounded-lg border border-border bg-muted/40 text-xs text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors font-medium"
                         >
                           <Github className="w-3.5 h-3.5" /> View Code
                         </a>
@@ -225,7 +225,7 @@ export function Projects({ activeSkill, onClearSkill }: Props) {
                             href={active.demo}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-white text-xs hover:bg-primary/90 transition-colors font-medium"
+                            className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary text-primary-foreground text-xs hover:bg-primary/90 transition-colors font-medium"
                           >
                             <ExternalLink className="w-3.5 h-3.5" /> Live Demo
                           </a>

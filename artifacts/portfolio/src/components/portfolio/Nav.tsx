@@ -61,7 +61,7 @@ export function Nav() {
           href="#home"
           className="text-foreground font-bold text-lg tracking-tight hover:text-primary transition-colors duration-200"
         >
-          Soubhagya Raha
+          SR.
         </a>
 
         {/* Desktop links */}

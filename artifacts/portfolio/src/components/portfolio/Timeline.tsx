@@ -60,7 +60,7 @@ const TYPE_COLORS: Record<string, string> = {
 
 export function Timeline() {
   return (
-    <section id="timeline" className="py-28 bg-[#050508]">
+    <section id="timeline" className="py-28 bg-background">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -70,7 +70,7 @@ export function Timeline() {
           className="mb-16 text-center"
         >
           <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">Experience</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">My Journey</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">My Journey</h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             A timeline of the internships, competitions, and projects that have shaped how I work.
           </p>
@@ -84,20 +84,20 @@ export function Timeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.07 }}
-              className="p-7 rounded-2xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.035] transition-colors"
+              className="p-7 rounded-2xl border border-border bg-card hover:bg-card/80 transition-colors"
             >
               {/* Header row */}
               <div className="flex flex-wrap items-start justify-between gap-3 mb-5">
                 <div className="flex-1 min-w-0">
                   <div className="flex flex-wrap items-center gap-2 mb-2">
                     <span
-                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${TYPE_COLORS[item.type] ?? "bg-white/10 text-white border-white/15"}`}
+                      className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${TYPE_COLORS[item.type] ?? "bg-muted text-foreground border-border"}`}
                     >
                       {item.type}
                     </span>
                     <span className="text-xs text-muted-foreground">{item.period}</span>
                   </div>
-                  <h3 className="text-lg font-semibold text-white leading-snug">{item.title}</h3>
+                  <h3 className="text-lg font-semibold text-foreground leading-snug">{item.title}</h3>
                   <p className="text-sm text-muted-foreground mt-0.5">{item.org}</p>
                 </div>
               </div>
@@ -113,8 +113,8 @@ export function Timeline() {
               </ul>
 
               {/* Impact */}
-              <div className="pt-4 border-t border-white/6">
-                <p className="text-sm text-white font-medium">
+              <div className="pt-4 border-t border-border">
+                <p className="text-sm text-foreground font-medium">
                   <span className="text-primary mr-1.5">Impact:</span>
                   {item.impact}
                 </p>

@@ -32,7 +32,7 @@ interface Props {
 
 export function Skills({ activeSkill, onSkillClick }: Props) {
   return (
-    <section id="skills" className="py-28 bg-[#0a0a0f] border-y border-white/5">
+    <section id="skills" className="py-28 bg-background border-y border-border">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -42,7 +42,7 @@ export function Skills({ activeSkill, onSkillClick }: Props) {
           className="mb-4 text-center"
         >
           <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">Technical Skills</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">What I Work With</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">What I Work With</h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             Technologies I use across real projects, grouped by purpose.
           </p>
@@ -67,9 +67,9 @@ export function Skills({ activeSkill, onSkillClick }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="p-6 rounded-2xl border border-white/8 bg-white/[0.02] flex flex-col"
+              className="p-6 rounded-2xl border border-border bg-card flex flex-col"
             >
-              <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-5 pb-3 border-b border-white/8">
+              <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-5 pb-3 border-b border-border">
                 {group.category}
               </h3>
               <div className="flex flex-col gap-2.5">
@@ -88,8 +88,8 @@ export function Skills({ activeSkill, onSkillClick }: Props) {
                       className={`flex items-center gap-2.5 text-left w-full rounded-lg px-2 py-1.5 transition-all ${
                         isLinked
                           ? isActive
-                            ? "bg-primary/15 text-white cursor-pointer"
-                            : "hover:bg-white/5 text-muted-foreground hover:text-white cursor-pointer"
+                            ? "bg-primary/15 text-foreground cursor-pointer"
+                            : "hover:bg-muted text-muted-foreground hover:text-foreground cursor-pointer"
                           : "text-muted-foreground/50 cursor-default"
                       }`}
                       title={isLinked ? `Filter projects using ${skill}` : undefined}

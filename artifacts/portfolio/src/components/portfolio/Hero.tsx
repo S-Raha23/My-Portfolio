@@ -22,7 +22,7 @@ export function Hero() {
       className="relative min-h-[100dvh] flex items-center justify-center overflow-hidden bg-transparent"
     >
       {/* Dot grid — hero-specific layer */}
-      <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(ellipse_68%_68%_at_50%_50%,#000_10%,transparent_100%)] dark:opacity-100 opacity-40"
+      <div className="absolute inset-0 pointer-events-none [mask-image:radial-gradient(ellipse_68%_68%_at_50%_50%,#000_10%,transparent_100%)] opacity-60 dark:opacity-100"
         style={{
           backgroundImage: "radial-gradient(circle, rgba(99,102,241,0.08) 1px, transparent 1px)",
           backgroundSize: "36px 36px",

@@ -26,7 +26,7 @@ const PILLARS = [
 
 export function WhatIBuild() {
   return (
-    <section id="about" className="py-28 bg-[#050508]">
+    <section id="about" className="py-28 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -36,7 +36,7 @@ export function WhatIBuild() {
           className="mb-16 text-center"
         >
           <p className="text-sm text-primary font-medium tracking-widest uppercase mb-3">About Me</p>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">What I Do</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">What I Do</h2>
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
             I combine deep technical knowledge with practical engineering to build software that is both intelligent and reliable.
           </p>
@@ -52,12 +52,12 @@ export function WhatIBuild() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="p-8 rounded-2xl border border-white/8 bg-white/[0.02] hover:bg-white/[0.04] transition-colors"
+                className="p-8 rounded-2xl border border-border bg-card hover:bg-card/80 transition-colors"
               >
                 <div className="mb-5 w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-2">{pillar.title}</h3>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{pillar.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed">{pillar.desc}</p>
               </motion.div>
             );

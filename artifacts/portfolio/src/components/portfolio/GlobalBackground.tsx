@@ -12,9 +12,10 @@ import {
   useTransform,
   AnimatePresence,
 } from "framer-motion";
+import { useTheme } from "@/lib/theme";
 
 // ── Config ──────────────────────────────────────────────────────────────────
-const N          = 52;   // particle count (reduced for clarity)
+const N          = 100;   // particle count
 const REPEL_R    = 155;
 const REPEL_F    = 4.5;
 const CLICK_R    = 260;
@@ -36,6 +37,9 @@ export function GlobalBackground() {
   const isIdle     = useRef(true);
   const idleTimer  = useRef<ReturnType<typeof setTimeout>>();
   const trail      = useRef<Array<{ x:number; y:number }>>([]);
+
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
 
   const [ripples, setRipples] = useState<Ripple[]>([]);
   const rippleId = useRef(0);
@@ -65,7 +69,7 @@ export function GlobalBackground() {
     particles.current = Array.from({ length: N }, () => {
       const angle = Math.random() * Math.PI * 2;
       const spd   = Math.random() * 0.36 + 0.08;
-      const hue   = 234 + Math.random() * 34;
+      const hue   = 214 + Math.random() * 14;
       const maxA  = Math.random() * 0.48 + 0.16;
       return {
         x: Math.random()*W, y: Math.random()*H,
@@ -89,20 +93,20 @@ export function GlobalBackground() {
     const imp  = impulse.current;
     const idle = isIdle.current;
     const dark = document.documentElement.classList.contains("dark");
-    const sat  = dark ? 78 : 88;
-    const lit  = dark ? 72 : 46;
+    const sat  = dark ? 85 : 88;
+    const lit  = dark ? 75 : 46;
     const idleMul = idle ? 0.22 : 1;
 
     // Cursor trail
     if (trail.current.length > 1) {
       trail.current.forEach((pt, i) => {
         const t = 1 - i / trail.current.length;
-        const a = t * (dark ? 0.52 : 0.38);
-        const g = ctx.createRadialGradient(pt.x, pt.y, 0, pt.x, pt.y, 7*t);
-        g.addColorStop(0, `hsla(245,82%,${dark?72:52}%,${a})`);
-        g.addColorStop(1, `hsla(245,82%,${dark?72:52}%,0)`);
+        const a = t * (dark ? 0.82 : 0.38);
+        const g = ctx.createRadialGradient(pt.x, pt.y, 0, pt.x, pt.y, 9*t);
+        g.addColorStop(0, `hsla(217,91%,${dark?60:53}%,${a})`);
+        g.addColorStop(1, `hsla(217,91%,${dark?60:53}%,0)`);
         ctx.beginPath();
-        ctx.arc(pt.x, pt.y, 7*t, 0, Math.PI*2);
+        ctx.arc(pt.x, pt.y, 9*t, 0, Math.PI*2);
         ctx.fillStyle = g;
         ctx.fill();
       });
@@ -123,7 +127,9 @@ export function GlobalBackground() {
         p.vx+=(dx/d)*f*0.07; p.vy+=(dy/d)*f*0.07;
       }
       const prox = d < REPEL_R ? 1 - d/REPEL_R : 0;
-      const tA = idle ? p.maxAlpha*0.3 : Math.min(1, p.maxAlpha + prox*0.62);
+      const tA = idle
+        ? p.maxAlpha * (dark ? 0.55 : 0.3)
+        : Math.min(1, p.maxAlpha + prox * (dark ? 0.85 : 0.62));
       p.alpha += (tA - p.alpha)*0.05;
 
       p.vx += (p.bvx*idleMul - p.vx)*0.018;
@@ -136,10 +142,11 @@ export function GlobalBackground() {
       if (p.x < -8) p.x=W+8; if (p.x>W+8) p.x=-8;
       if (p.y < -8) p.y=H+8; if (p.y>H+8) p.y=-8;
 
-      const gr = p.r*4.5;
+      const gr = p.r * (dark ? 7.5 : 4.5);
+      const alphaBoost = dark ? Math.min(1, p.alpha * 1.8) : p.alpha;
       const grd = ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,gr);
-      grd.addColorStop(0,   `hsla(${p.hue},${sat}%,${lit}%,${p.alpha})`);
-      grd.addColorStop(0.4, `hsla(${p.hue},${sat}%,${lit-5}%,${p.alpha*0.4})`);
+      grd.addColorStop(0,   `hsla(${p.hue},${sat}%,${lit}%,${alphaBoost})`);
+      grd.addColorStop(0.4, `hsla(${p.hue},${sat}%,${lit-5}%,${alphaBoost*0.4})`);
       grd.addColorStop(1,   `hsla(${p.hue},${sat}%,${lit}%,0)`);
       ctx.beginPath(); ctx.arc(p.x,p.y,gr,0,Math.PI*2);
       ctx.fillStyle=grd; ctx.fill();
@@ -209,8 +216,6 @@ export function GlobalBackground() {
     };
   }, [handleMove, handleClick]);
 
-  const isDark = document.documentElement.classList.contains("dark");
-
   return (
     <>
       {/* Fixed canvas — behind everything */}
@@ -234,7 +239,7 @@ export function GlobalBackground() {
         ))}
         {ripples.map(rpl => (
           <motion.div key={`${rpl.id}-b`}
-            className="fixed rounded-full pointer-events-none border border-violet-400/35"
+            className="fixed rounded-full pointer-events-none border border-teal-400/30"
             style={{ left: rpl.x, top: rpl.y, translateX: "-50%", translateY: "-50%", zIndex: 2 }}
             initial={{ width: 0, height: 0, opacity: 0.65 }}
             animate={{ width: 250, height: 250, opacity: 0 }}
@@ -253,7 +258,9 @@ export function GlobalBackground() {
           translateX: "-50%", translateY: "-50%",
           scaleX: sXs, scaleY: sYs, rotate: sRs,
           zIndex: 1,
-          background: "radial-gradient(circle, rgba(99,102,241,0.26) 0%, rgba(99,102,241,0.09) 42%, transparent 68%)",
+          background: isDark
+            ? "radial-gradient(circle, rgba(59,130,246,0.20) 0%, rgba(59,130,246,0.08) 42%, transparent 68%)"
+            : "radial-gradient(circle, rgba(37,99,235,0.15) 0%, rgba(37,99,235,0.05) 42%, transparent 68%)",
         }}
       />
 
@@ -265,7 +272,9 @@ export function GlobalBackground() {
           left: tLeft, top: tTop,
           translateX: "-50%", translateY: "-50%",
           zIndex: 1,
-          background: "radial-gradient(circle, rgba(139,92,246,0.20) 0%, transparent 64%)",
+          background: isDark
+            ? "radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 64%)"
+            : "radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 64%)",
         }}
       />
 
@@ -277,9 +286,11 @@ export function GlobalBackground() {
           left: "50%", top: "42%",
           translateX: "-50%", translateY: "-50%",
           zIndex: 0,
-          background: "radial-gradient(circle, rgba(99,102,241,0.075) 0%, transparent 60%)",
+          background: isDark
+            ? "radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 60%)"
+            : "radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 60%)",
         }}
-        animate={{ scale: [1, 1.13, 0.94, 1.08, 1], opacity: [0.5, 0.95, 0.55, 0.85, 0.5] }}
+        animate={{ scale: [1, 1.13, 0.94, 1.08, 1], opacity: isDark ? [0.7, 1, 0.75, 1, 0.7] : [0.5, 0.95, 0.55, 0.85, 0.5] }}
         transition={{ duration: 11, repeat: Infinity, ease: "easeInOut" }}
       />
 
@@ -291,9 +302,11 @@ export function GlobalBackground() {
           left: "68%", top: "30%",
           translateX: "-50%", translateY: "-50%",
           zIndex: 0,
-          background: "radial-gradient(circle, rgba(139,92,246,0.1) 0%, transparent 62%)",
+          background: isDark
+            ? "radial-gradient(circle, rgba(45,212,191,0.08) 0%, transparent 62%)"
+            : "radial-gradient(circle, rgba(20,184,166,0.06) 0%, transparent 62%)",
         }}
-        animate={{ x: [0, 45, -25, 0], y: [0, -30, 20, 0], opacity: [0.45, 0.82, 0.38, 0.45] }}
+        animate={{ x: [0, 45, -25, 0], y: [0, -30, 20, 0], opacity: isDark ? [0.7, 1, 0.6, 0.7] : [0.45, 0.82, 0.38, 0.45] }}
         transition={{ duration: 14, repeat: Infinity, ease: "easeInOut" }}
       />
     </>

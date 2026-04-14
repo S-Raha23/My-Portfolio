@@ -1,28 +1,35 @@
 import { motion } from "framer-motion";
 
+// ─────────────────────────────────────────────────────────────────────────────
+// SKILL GROUPS — add new categories or skills here freely.
+// Each group: { category: string, skills: string[] }
+// ─────────────────────────────────────────────────────────────────────────────
 const SKILL_GROUPS = [
   {
-    category: "Programming",
-    skills: ["C++", "Python", "Go", "TypeScript", "Rust"],
+    category: "Programming Languages",
+    skills: ["C", "C++", "Python", "JavaScript", "HTML", "CSS", "SQL", "MATLAB"],
   },
   {
-    category: "AI / Machine Learning",
-    skills: ["PyTorch", "TensorFlow", "Scikit-learn", "HuggingFace", "ONNX", "CUDA"],
+    category: "AI / ML / CV",
+    skills: ["PyTorch", "TensorFlow", "Scikit-learn", "OpenCV", "Keras", "NumPy", "Pandas", "Matplotlib"],
   },
   {
-    category: "Backend & Infrastructure",
-    skills: ["Docker", "Kubernetes", "PostgreSQL", "Redis", "Kafka", "gRPC"],
+    category: "NLP & Data",
+    skills: ["BeautifulSoup", "Selenium", "Sentence-BERT", "CodeBERT", "Jupyter"],
   },
   {
-    category: "Tools & Workflow",
-    skills: ["Git", "Linux", "AWS", "CI/CD", "Apache Kafka", "Jupyter"],
+    category: "Web & Backend",
+    skills: ["ReactJS", "Node.js", "Express", "Bcrypt", "Git"],
   },
 ];
 
-// All skills that appear in at least one project — clicking these scrolls to and filters projects
+// Skills that appear in at least one project — clicking these filters the projects section.
+// Keep this in sync with the stack arrays in Projects.tsx.
 const PROJECT_SKILLS = new Set([
-  "Python", "PyTorch", "CUDA", "C++", "Go", "Docker", "Redis",
-  "TCP/IP", "Linux", "Apache Kafka", "PostgreSQL", "ONNX", "HuggingFace",
+  "Python", "PyTorch", "OpenCV", "TensorFlow", "Scikit-learn",
+  "C++", "ReactJS", "Node.js", "Express", "SQL",
+  "BeautifulSoup", "Selenium", "Sentence-BERT", "CodeBERT",
+  "MATLAB", "Jupyter",
 ]);
 
 interface Props {
@@ -32,7 +39,7 @@ interface Props {
 
 export function Skills({ activeSkill, onSkillClick }: Props) {
   return (
-    <section id="skills" className="py-28 bg-background border-y border-border">
+    <section id="skills" className="py-28 relative border-y border-border/30">
       <div className="max-w-6xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -67,7 +74,8 @@ export function Skills({ activeSkill, onSkillClick }: Props) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.08 }}
-              className="p-6 rounded-2xl border border-border bg-card flex flex-col"
+              whileHover={{ y: -4, transition: { duration: 0.2 } }}
+              className="p-6 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-[0_0_24px_rgba(37,99,235,0.10)] flex flex-col transition-all duration-300"
             >
               <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-5 pb-3 border-b border-border">
                 {group.category}
@@ -85,11 +93,11 @@ export function Skills({ activeSkill, onSkillClick }: Props) {
                       transition={{ duration: 0.3, delay: i * 0.06 + j * 0.04 }}
                       onClick={() => isLinked && onSkillClick(skill)}
                       disabled={!isLinked}
-                      className={`flex items-center gap-2.5 text-left w-full rounded-lg px-2 py-1.5 transition-all ${
+                      className={`flex items-center gap-2.5 text-left w-full rounded-lg px-2 py-1.5 transition-all duration-200 ${
                         isLinked
                           ? isActive
-                            ? "bg-primary/15 text-foreground cursor-pointer"
-                            : "hover:bg-muted text-muted-foreground hover:text-foreground cursor-pointer"
+                            ? "bg-primary/15 text-foreground cursor-pointer shadow-[0_0_12px_rgba(37,99,235,0.18)]"
+                            : "hover:bg-primary/10 hover:text-primary hover:shadow-[0_0_10px_rgba(37,99,235,0.12)] text-muted-foreground cursor-pointer"
                           : "text-muted-foreground/50 cursor-default"
                       }`}
                       title={isLinked ? `Filter projects using ${skill}` : undefined}

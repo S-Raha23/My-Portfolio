@@ -1,23 +1,47 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Send } from "lucide-react";
+import { Github, Linkedin, Mail, Send, Loader2 } from "lucide-react";
+
+// ─── Formspree setup ────────────────────────────────────────────────────────
+// 1. Go to https://formspree.io and sign up (free)
+// 2. Create a new form → set email to Soubhagyaraha24@gmail.com
+// 3. Replace the ID below with your form ID (looks like "xpwzabcd")
+const FORMSPREE_ID = "xreojwbd";
+const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_ID}`;
+// ────────────────────────────────────────────────────────────────────────────
+
+type Status = "idle" | "submitting" | "success" | "error";
 
 export function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // In a real deployment, connect this to a form backend (e.g. Formspree, Resend)
-    setSubmitted(true);
+    setStatus("submitting");
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
-    <section id="contact" className="py-28 bg-background">
+    <section id="contact" className="py-28 relative">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -45,31 +69,35 @@ export function Contact() {
             <div>
               <h3 className="text-foreground font-semibold text-lg mb-2">Reach me directly</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
-                I'm currently open to internship and full-time opportunities in ML Engineering and Software Engineering. Response time is typically within 48 hours.
+                I'm currently open to internship, full-time, and freelance opportunities in ML Engineering and Software Engineering. Response time is typically within 48 hours.
               </p>
             </div>
 
             <a
-              href="mailto:soubhagya@example.com"
+              href="mailto:Soubhagyaraha24@gmail.com"
               className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground transition-colors group"
             >
-              <div className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center group-hover:border-primary/40 transition-colors">
-                <Mail className="w-4 h-4" />
+              <div className="w-10 h-10 rounded-xl bg-muted border border-border flex items-center justify-center group-hover:border-primary/60 group-hover:bg-primary/10 group-hover:shadow-[0_0_14px_rgba(37,99,235,0.18)] transition-all duration-300">
+                <Mail className="w-4 h-4 group-hover:text-primary transition-colors" />
               </div>
-              soubhagya@example.com
+              Soubhagyaraha24@gmail.com
             </a>
 
             <div className="flex gap-3">
               <a
-                href="#"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
+                href="https://github.com/S-Raha23"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-primary/8 hover:shadow-[0_0_14px_rgba(37,99,235,0.15)] transition-all duration-300"
               >
                 <Github className="w-4 h-4" />
                 GitHub
               </a>
               <a
-                href="#"
-                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-muted-foreground hover:text-foreground hover:border-border/80 transition-colors"
+                href="https://www.linkedin.com/in/soubhagya-raha-78b25b285/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border bg-card text-sm text-muted-foreground hover:text-foreground hover:border-primary/40 hover:bg-primary/8 hover:shadow-[0_0_14px_rgba(37,99,235,0.15)] transition-all duration-300"
               >
                 <Linkedin className="w-4 h-4" />
                 LinkedIn
@@ -84,19 +112,22 @@ export function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            {submitted ? (
+            {status === "success" ? (
               <div className="p-8 rounded-2xl border border-primary/30 bg-primary/5 text-center">
                 <div className="w-12 h-12 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center mx-auto mb-4">
                   <Send className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="text-foreground font-semibold mb-2">Message sent</h3>
-                <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll get back to you soon.</p>
+                <p className="text-muted-foreground text-sm">Thanks for reaching out. I'll get back to you within 48 hours.</p>
+                <button
+                  onClick={() => setStatus("idle")}
+                  className="mt-4 text-xs text-primary hover:underline"
+                >
+                  Send another message
+                </button>
               </div>
             ) : (
-              <form
-                onSubmit={handleSubmit}
-                className="p-7 rounded-2xl border border-border bg-card space-y-5"
-              >
+              <form onSubmit={handleSubmit} className="p-7 rounded-2xl border border-border bg-card space-y-5">
                 <div>
                   <label htmlFor="name" className="block text-xs font-medium text-muted-foreground mb-1.5">
                     Name
@@ -145,12 +176,22 @@ export function Contact() {
                   />
                 </div>
 
+                {status === "error" && (
+                  <p className="text-xs text-destructive">
+                    Something went wrong. Please try emailing me directly at Soubhagyaraha24@gmail.com
+                  </p>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 transition-colors"
+                  disabled={status === "submitting"}
+                  className="w-full flex items-center justify-center gap-2 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:bg-primary/90 disabled:opacity-60 transition-colors"
                 >
-                  <Send className="w-4 h-4" />
-                  Send Message
+                  {status === "submitting" ? (
+                    <><Loader2 className="w-4 h-4 animate-spin" /> Sending...</>
+                  ) : (
+                    <><Send className="w-4 h-4" /> Send Message</>
+                  )}
                 </button>
               </form>
             )}

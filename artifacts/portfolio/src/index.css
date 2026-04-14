@@ -58,47 +58,47 @@
 
 /* ── Light mode (default :root) ─────────────────────────────────── */
 :root {
-  --button-outline: rgba(99,102,241, .14);
-  --badge-outline: rgba(99,102,241, .08);
+  --button-outline: rgba(37,99,235, .14);
+  --badge-outline: rgba(37,99,235, .08);
   --opaque-button-border-intensity: 6;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .06);
 
-  --background: 240 30% 97%;
-  --foreground: 240 15% 12%;
+  --background: 210 40% 98%;
+  --foreground: 222 47% 11%;
 
   --card: 0 0% 100%;
-  --card-foreground: 240 15% 12%;
-  --card-border: 240 10% 88%;
+  --card-foreground: 222 47% 11%;
+  --card-border: 214 32% 91%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 240 15% 12%;
-  --popover-border: 240 10% 88%;
+  --popover-foreground: 222 47% 11%;
+  --popover-border: 214 32% 91%;
 
-  --primary: 239 84% 57%;
+  --primary: 221 83% 53%;
   --primary-foreground: 0 0% 100%;
 
-  --secondary: 240 10% 92%;
-  --secondary-foreground: 240 15% 20%;
+  --secondary: 214 32% 91%;
+  --secondary-foreground: 222 47% 11%;
 
-  --muted: 240 10% 92%;
-  --muted-foreground: 240 5% 46%;
+  --muted: 214 32% 95%;
+  --muted-foreground: 215 16% 47%;
 
-  --accent: 239 84% 57%;
+  --accent: 173 80% 40%;
   --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84% 55%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 240 10% 87%;
-  --input: 240 10% 87%;
-  --ring: 239 84% 57%;
+  --border: 214 32% 89%;
+  --input: 214 32% 89%;
+  --ring: 221 83% 53%;
 
-  --chart-1: 239 84% 57%;
-  --chart-2: 240 10% 88%;
-  --chart-3: 240 15% 12%;
-  --chart-4: 240 15% 12%;
-  --chart-5: 240 5% 46%;
+  --chart-1: 221 83% 53%;
+  --chart-2: 173 80% 40%;
+  --chart-3: 222 47% 11%;
+  --chart-4: 215 16% 47%;
+  --chart-5: 214 32% 91%;
 
   --radius: 0.25rem;
 }
@@ -111,41 +111,41 @@
   --elevate-1: rgba(255,255,255, .04);
   --elevate-2: rgba(255,255,255, .09);
 
-  --background: 240 20% 5%;
-  --foreground: 210 20% 98%;
+  --background: 222 84% 2%;
+  --foreground: 210 40% 98%;
 
-  --card: 240 20% 7%;
-  --card-foreground: 210 20% 98%;
-  --card-border: 240 10% 15%;
+  --card: 222 47% 6%;
+  --card-foreground: 210 40% 98%;
+  --card-border: 217 33% 12%;
 
-  --popover: 240 20% 7%;
-  --popover-foreground: 210 20% 98%;
-  --popover-border: 240 10% 15%;
+  --popover: 222 47% 6%;
+  --popover-foreground: 210 40% 98%;
+  --popover-border: 217 33% 12%;
 
-  --primary: 239 84% 67%;
-  --primary-foreground: 210 20% 98%;
+  --primary: 217 91% 60%;
+  --primary-foreground: 222 84% 2%;
 
-  --secondary: 240 10% 15%;
-  --secondary-foreground: 210 20% 98%;
+  --secondary: 217 33% 12%;
+  --secondary-foreground: 210 40% 98%;
 
-  --muted: 240 10% 15%;
-  --muted-foreground: 215 14% 65%;
+  --muted: 217 33% 11%;
+  --muted-foreground: 215 20% 65%;
 
-  --accent: 239 84% 67%;
-  --accent-foreground: 210 20% 98%;
+  --accent: 174 72% 56%;
+  --accent-foreground: 222 84% 2%;
 
   --destructive: 0 84% 60%;
-  --destructive-foreground: 210 20% 98%;
+  --destructive-foreground: 210 40% 98%;
 
-  --border: 240 10% 15%;
-  --input: 240 10% 15%;
-  --ring: 239 84% 67%;
+  --border: 217 33% 12%;
+  --input: 217 33% 12%;
+  --ring: 217 91% 60%;
 
-  --chart-1: 239 84% 67%;
-  --chart-2: 240 10% 15%;
+  --chart-1: 217 91% 60%;
+  --chart-2: 174 72% 56%;
   --chart-3: 0 0% 100%;
-  --chart-4: 210 20% 98%;
-  --chart-5: 215 14% 65%;
+  --chart-4: 210 40% 98%;
+  --chart-5: 215 20% 65%;
 
   --radius: 0.25rem;
 }
@@ -154,4 +154,29 @@
   * { @apply border-border; }
   body { @apply font-sans antialiased bg-background text-foreground; }
   html { scroll-behavior: smooth; }
+}
+
+/* ── Typography hierarchy boost ────────────────────────────────── */
+h1, h2, h3 {
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-weight: 800;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+.dark body::before,
+.dark::before {
+  opacity: 0.045;
 }

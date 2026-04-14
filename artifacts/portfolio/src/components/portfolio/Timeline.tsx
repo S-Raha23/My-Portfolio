@@ -54,13 +54,13 @@ const EXPERIENCES = [
 const TYPE_COLORS: Record<string, string> = {
   Experience: "bg-primary/15 text-primary border-primary/25",
   Hackathon: "bg-emerald-500/15 text-emerald-400 border-emerald-500/25",
-  "Open Source": "bg-amber-500/15 text-amber-400 border-amber-500/25",
-  Achievement: "bg-violet-500/15 text-violet-400 border-violet-500/25",
+  "Open Source": "bg-blue-500/15 text-blue-400 border-blue-500/25",
+  Achievement: "bg-teal-500/15 text-teal-400 border-teal-500/25",
 };
 
 export function Timeline() {
   return (
-    <section id="timeline" className="py-28 bg-background">
+    <section id="timeline" className="py-28 relative">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -84,7 +84,8 @@ export function Timeline() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.45, delay: i * 0.07 }}
-              className="p-7 rounded-2xl border border-border bg-card hover:bg-card/80 transition-colors"
+              whileHover={{ y: -3, transition: { duration: 0.2 } }}
+              className="p-7 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-[0_0_28px_rgba(37,99,235,0.10)] transition-all duration-300"
             >
               {/* Header row */}
               <div className="flex flex-wrap items-start justify-between gap-3 mb-5">

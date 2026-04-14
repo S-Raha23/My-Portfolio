@@ -5,8 +5,8 @@ const HACKATHONS = [
   {
     position: "1st Place",
     icon: Trophy,
-    color: "text-amber-400",
-    bgColor: "bg-amber-500/10 border-amber-500/20",
+    color: "text-blue-400",
+    bgColor: "bg-blue-500/10 border-blue-500/20",
     name: "Global ML Hackathon",
     organizer: "OpenAI & Partners",
     date: "October 2023",
@@ -37,8 +37,8 @@ const HACKATHONS = [
   {
     position: "Finalist",
     icon: Star,
-    color: "text-violet-400",
-    bgColor: "bg-violet-500/10 border-violet-500/20",
+    color: "text-teal-400",
+    bgColor: "bg-teal-500/10 border-teal-500/20",
     name: "Climate AI Hackathon",
     organizer: "Tech for Good Foundation",
     date: "August 2022",
@@ -54,7 +54,7 @@ const HACKATHONS = [
 
 export function Hackathons() {
   return (
-    <section id="hackathons" className="py-28 bg-background">
+    <section id="hackathons" className="py-28 relative">
       <div className="max-w-5xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -80,7 +80,8 @@ export function Hackathons() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.45, delay: i * 0.08 }}
-                className="p-7 rounded-2xl border border-border bg-card hover:bg-card/80 transition-colors"
+                whileHover={{ y: -4, transition: { duration: 0.2 } }}
+                className="p-7 rounded-2xl border border-border bg-card hover:border-primary/30 hover:shadow-[0_0_32px_rgba(37,99,235,0.10)] transition-all duration-300"
               >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
@@ -118,7 +119,7 @@ export function Hackathons() {
                     {h.stack.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-muted-foreground font-mono"
+                        className="px-2.5 py-1 rounded-md bg-muted border border-border text-xs text-muted-foreground font-mono hover:border-primary/40 hover:text-primary hover:bg-primary/8 transition-all duration-200 cursor-default"
                       >
                         {tech}
                       </span>

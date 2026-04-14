@@ -1,4 +1,5 @@
 import { useState, useCallback } from "react";
+import { StatsStrip } from "@/components/portfolio/StatsStrip";
 import { GlobalBackground } from "@/components/portfolio/GlobalBackground";
 import { Nav }        from "@/components/portfolio/Nav";
 import { Hero }       from "@/components/portfolio/Hero";
@@ -44,12 +45,15 @@ export default function Portfolio() {
         {/* Hero — fully transparent, shows the canvas */}
         <Hero />
 
+        {/* Stats strip — problem scale at a glance */}
+        <StatsStrip />
+
         {/*
          * All remaining sections live inside this wrapper.
          * bg-background/90 keeps text readable while letting
          * the global glow/particles bleed through subtly (~10%).
          */}
-        <div className="relative bg-background/90 backdrop-blur-[2px]">
+        <div className="relative">
           <WhatIBuild />
           <Projects activeSkill={activeSkill} onClearSkill={handleClearSkill} />
           <Hackathons />
@@ -59,7 +63,7 @@ export default function Portfolio() {
         </div>
       </main>
 
-      <footer className="relative z-10 py-8 text-center border-t border-border/50 bg-background/92 backdrop-blur-sm">
+      <footer className="relative z-10 py-8 text-center border-t border-border/50">
         <p className="text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} Soubhagya Raha. All rights reserved.
         </p>

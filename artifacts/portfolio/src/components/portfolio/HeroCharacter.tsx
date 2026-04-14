@@ -16,8 +16,8 @@ import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { gsap } from "gsap";
 
-// Local GLB — served from public/ folder, no external dependency
-const MODEL_URL = "/RobotExpressive.glb";
+// Local GLB — served from public/ folder, base path handled by Vite
+const MODEL_URL = `${import.meta.env.BASE_URL}RobotExpressive.glb`;
 
 interface Props {
   className?: string;
